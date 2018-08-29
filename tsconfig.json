@@ -16,6 +16,14 @@
     "lib": [
       "es2017",
       "dom"
-    ]
+    ],
+    "paths": {
+      "no-move-click": [
+        "dist/no-move-click"
+      ],
+      "no-move-click/*": [
+        "dist/no-move-click/*"
+      ]
+    }
   }
 }

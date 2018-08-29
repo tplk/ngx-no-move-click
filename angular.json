@@ -121,6 +121,46 @@
           }
         }
       }
+    },
+    "no-move-click": {
+      "root": "projects/no-move-click",
+      "sourceRoot": "projects/no-move-click/src",
+      "projectType": "library",
+      "prefix": "nmc",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/no-move-click/tsconfig.lib.json",
+            "project": "projects/no-move-click/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/no-move-click/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/no-move-click/src/test.ts",
+            "tsConfig": "projects/no-move-click/tsconfig.spec.json",
+            "karmaConfig": "projects/no-move-click/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/no-move-click/tsconfig.lib.json",
+              "projects/no-move-click/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "no-move-click-demo"
